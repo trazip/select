@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Preference.create(name: "Waterpolo", category: "Sport")
+Preference.create(name: "Football", category: "Sport")
+Preference.create(name: "Basketball", category: "Sport")
+Preference.create(name: "Volleyball", category: "Sport")
+Preference.create(name: "Opera", category: "Culture")
+Preference.create(name: "Theater", category: "Culture")
+Preference.create(name: "Museum", category: "Culture")
+Preference.create(name: "Cinema", category: "Culture")
+Preference.create(name: "Restaurant", category: "Food")
+Preference.create(name: "Bar", category: "Food")
