@@ -1,11 +1,12 @@
 <div class="container-xxl mx-auto">
   <%= simple_form_for @activity do |form| %>
     <%= form.input :name %>
-    <%= form.simple_fields_for :preference do |f| %>
-      <div data-controller="select" data-select-url-value="<%= preferences_path %>">
-        <%= f.input :category, collection: Preference.categories, input_html: { data: { action: "change->select#change" }} %>
-        <%= f.input :name, collection: [], input_html: { id: "menu", data: { select_target: "select" }} %>
-      </div>
-    <% end %>
+    <div data-controller="select" data-select-url-value="<%= preferences_path %>">
+      <%= form.input :category do %>
+        <%= select_tag :category, options_for_select(Preference.categories), include_blank: true, class: "form-select select required", data: { action: "change->select#change" } %>
+      <% end %>
+      <%= form.association :preference, collection: [], input_html: { data: { select_target: "select" }} %>
+    </div>
+    <%= form.submit %>
   <% end %>
 </div>
