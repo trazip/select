@@ -5,7 +5,7 @@
       <%= form.input :category do %>
         <%= select_tag :category, options_for_select(Preference.categories), include_blank: true, class: "form-select select required", data: { action: "change->select#change" } %>
       <% end %>
-      <%= form.association :preference, collection: [], input_html: { data: { select_target: "select" }} %>
+      <%= form.association :preference, collection: [], label: false, input_html: { data: { select_target: "select" }} %>
     </div>
     <%= form.submit %>
   <% end %>
